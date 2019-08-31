@@ -3,7 +3,16 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig : {
+    apiKey: "AIzaSyBAmhOWeITja2_j_Uh54QyJpdxl1_oKarc",
+    authDomain: "lifeline-mfpr.firebaseapp.com",
+    databaseURL: "https://lifeline-mfpr.firebaseio.com",
+    projectId: "lifeline-mfpr",
+    storageBucket: "lifeline-mfpr.appspot.com",
+    messagingSenderId: "936616076058",
+    appId: "1:936616076058:web:5c74852dd8c77665"
+  }
 };
 
 /*
