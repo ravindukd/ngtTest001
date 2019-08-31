@@ -13,21 +13,25 @@ import { MatListModule } from '@angular/material/list';
 import { CustomersComponent } from './customers/customers.component';
 import { AppRoutingModule } from './app-routing.module';
 import { OverviewComponent } from './overview/overview.component';
+import { FormsModule } from "@angular/forms";
 
 import { AngularFireModule } from '@angular/fire';
 import { environment } from '../environments/environment';
+import { TestsComponent } from './tests/tests.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     CustomersComponent,
-    OverviewComponent
+    OverviewComponent,
+    TestsComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     LayoutModule,
+    FormsModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,

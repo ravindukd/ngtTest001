@@ -12,6 +12,10 @@ export const environment = {
     storageBucket: "lifeline-mfpr.appspot.com",
     messagingSenderId: "936616076058",
     appId: "1:936616076058:web:5c74852dd8c77665"
+  },
+  prefLab : {
+    mfcode : "EL00-1567247124",
+    displayName : "Headquaters"
   }
 };
 
