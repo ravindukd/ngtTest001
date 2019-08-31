@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AuthService } from "./shared/services/auth.service";
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,8 +17,15 @@ import { OverviewComponent } from './overview/overview.component';
 import { FormsModule } from "@angular/forms";
 
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFirestore } from "@angular/fire/firestore";
+
 import { environment } from '../environments/environment';
 import { TestsComponent } from './tests/tests.component';
+import { SignInComponent } from './auth/sign-in/sign-in.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from "./auth/verify-email/verify-email.component";
 
 @NgModule({
   declarations: [
@@ -25,7 +33,11 @@ import { TestsComponent } from './tests/tests.component';
     NavComponent,
     CustomersComponent,
     OverviewComponent,
-    TestsComponent
+    TestsComponent,
+    SignInComponent,
+    SignUpComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,9 +50,13 @@ import { TestsComponent } from './tests/tests.component';
     MatIconModule,
     MatListModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [
+    AuthService,
+    AngularFirestore
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
