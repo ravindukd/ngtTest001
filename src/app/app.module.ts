@@ -21,6 +21,12 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { environment } from '../environments/environment';
 import { TestsComponent } from './tests/tests.component';
+import { SignInComponent } from './auth/sign-in/sign-in.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './auth/verify-email/verify-email.component';
+
+import { AuthService } from "./shared/services/auth.service";
 
 @NgModule({
   declarations: [
@@ -28,7 +34,11 @@ import { TestsComponent } from './tests/tests.component';
     NavComponent,
     CustomersComponent,
     OverviewComponent,
-    TestsComponent
+    TestsComponent,
+    SignInComponent,
+    SignUpComponent,
+    ForgotPasswordComponent,
+    VerifyEmailComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +55,11 @@ import { TestsComponent } from './tests/tests.component';
     AngularFireAuthModule,
     AngularFirestoreModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    AuthService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
