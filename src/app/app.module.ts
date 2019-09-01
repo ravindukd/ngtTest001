@@ -16,6 +16,9 @@ import { OverviewComponent } from './overview/overview.component';
 import { FormsModule } from "@angular/forms";
 
 import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 import { environment } from '../environments/environment';
 import { TestsComponent } from './tests/tests.component';
 
@@ -38,7 +41,9 @@ import { TestsComponent } from './tests/tests.component';
     MatIconModule,
     MatListModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireAuthModule,
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
