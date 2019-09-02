@@ -16,6 +16,7 @@ import { CustomersComponent } from './customers/customers.component';
 import { AppRoutingModule } from './app-routing.module';
 import { OverviewComponent } from './overview/overview.component';
 import { FormsModule } from "@angular/forms";
+import {MatInputModule} from '@angular/material/input';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from "@angular/fire/auth";
@@ -32,6 +33,8 @@ import { AuthService } from "./shared/services/auth.service";
 import { CustomerDetailsComponent } from './customers/customer-details/customer-details.component';
 import { CustomerCreateComponent } from './customers/customer-create/customer-create.component';
 import { CustomerListComponent } from './customers/customer-list/customer-list.component';
+
+import { FilterPipeModule } from 'ngx-filter-pipe';
 
 @NgModule({
   declarations: [
@@ -53,6 +56,7 @@ import { CustomerListComponent } from './customers/customer-list/customer-list.c
     BrowserAnimationsModule,
     LayoutModule,
     FormsModule,
+    MatInputModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
@@ -63,7 +67,8 @@ import { CustomerListComponent } from './customers/customer-list/customer-list.c
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    FilterPipeModule
   ],
   providers: [
     AuthService

@@ -1,5 +1,15 @@
-<p>List</p>
-<button mat-button [routerLink]="['create']">Create</button>
-<div *ngFor="let customer of customers" style="width: 300px;">
+<h3>List</h3>
+<button mat-raised-button [routerLink]="['create']">Create</button>
+<br>
+<br>
+<mat-divider></mat-divider>
+<br>
+<mat-form-field class="example-form-field">
+    <input matInput type="text" placeholder="Search Customer" [(ngModel)]="cusFilter.name">
+    <button mat-button *ngIf="cusFilter.name" matSuffix mat-icon-button aria-label="Clear" (click)="cusFilter.name=''">
+      <mat-icon>close</mat-icon>
+    </button>
+</mat-form-field>
+<div *ngFor="let customer of customers | filterBy: cusFilter" style="width: 300px;">
   <app-customer-details [customer]='customer'></app-customer-details>
 </div>

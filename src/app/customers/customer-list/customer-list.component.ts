@@ -13,8 +13,6 @@ export class CustomerListComponent implements OnInit {
   customers: any;
 
   constructor(private customerService: CustomerService) { }
-
-
   ngOnInit() {
     this.getCustomersList();
   }
@@ -31,10 +29,7 @@ export class CustomerListComponent implements OnInit {
       this.customers = customers;
     });
   }
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource(this.customers);
+  value = 'sal';
+  cusFilter: any = { name: '' };
 
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
 }

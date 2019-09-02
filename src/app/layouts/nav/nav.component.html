@@ -24,7 +24,7 @@
         <span>{{ diaplayName }}</span>
         <span class="example-spacer"></span>
         <button mat-button [matMenuTriggerFor]="menu">
-          <img class="profile-image" src="{{(user.photoURL) ? user.photoURL : ''}}"
+          <img class="profile-image" src="{{(user.photoURL) ? user.photoURL : 'user'}}"
           alt="{{user.displayName}}"></button>
         <mat-menu #menu="matMenu">
           <button mat-menu-item>{{(user.displayName) ? user.displayName : 'User'}}</button>
