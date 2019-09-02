@@ -10,6 +10,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatFormFieldModule } from "@angular/material/form-field";
 import { CustomersComponent } from './customers/customers.component';
 import { AppRoutingModule } from './app-routing.module';
 import { OverviewComponent } from './overview/overview.component';
@@ -27,6 +29,9 @@ import { ForgotPasswordComponent } from './auth/forgot-password/forgot-password.
 import { VerifyEmailComponent } from './auth/verify-email/verify-email.component';
 
 import { AuthService } from "./shared/services/auth.service";
+import { CustomerDetailsComponent } from './customers/customer-details/customer-details.component';
+import { CustomerCreateComponent } from './customers/customer-create/customer-create.component';
+import { CustomerListComponent } from './customers/customer-list/customer-list.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +44,9 @@ import { AuthService } from "./shared/services/auth.service";
     SignUpComponent,
     ForgotPasswordComponent,
     VerifyEmailComponent,
+    CustomerDetailsComponent,
+    CustomerCreateComponent,
+    CustomerListComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +57,9 @@ import { AuthService } from "./shared/services/auth.service";
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
+    MatMenuModule,
     MatListModule,
+    MatFormFieldModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,

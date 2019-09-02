@@ -12,15 +12,27 @@
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
-        *ngIf="isHandset$ | async">
-        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-      </button>
-      <span>{{ diaplayName }}</span>
+      <mat-toolbar-row *ngIf="authService.userData as user">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span>{{ diaplayName }}</span>
+        <span class="example-spacer"></span>
+        <button mat-button [matMenuTriggerFor]="menu">
+          <img class="profile-image" src="{{(user.photoURL) ? user.photoURL : ''}}"
+          alt="{{user.displayName}}"></button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>{{(user.displayName) ? user.displayName : 'User'}}</button>
+          <button mat-menu-item>Settings</button>
+          <mat-divider></mat-divider>
+          <button mat-menu-item (click)="authService.SignOut()">Sign Out</button>
+        </mat-menu>
+      </mat-toolbar-row>
     </mat-toolbar>
     <div class="pme">
       <router-outlet></router-outlet>

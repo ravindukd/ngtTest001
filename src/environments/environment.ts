@@ -15,7 +15,8 @@ export const environment = {
   },
   prefLab : {
     mfcode : "EL00-1567247124",
-    displayName : "Headquaters"
+    displayName : "Headquaters",
+    signUpRequired: true
   }
 };
 
